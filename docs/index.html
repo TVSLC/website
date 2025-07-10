@@ -5,53 +5,138 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CloudSkillWorks | AWS Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: sans-serif;
-            background: #f8f9fa;
-            color: #212529;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #e0f2f1);
+            color: #333;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             min-height: 100vh;
-            text-align: center;
         }
 
         header {
-            background-color: #0d6efd;
+            background: #0d6efd;
             color: white;
-            padding: 2rem;
-            width: 100%;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 120px;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
         }
 
         main {
+            flex: 1;
             padding: 2rem;
             max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            margin-top: -2rem;
+            z-index: 1;
+            position: relative;
         }
 
-        footer {
+        main h2 {
+            color: #0d6efd;
+            font-size: 1.75rem;
+        }
+
+        main h3 {
             margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #6c757d;
+            color: #333;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .button {
             display: inline-block;
-            margin-top: 1rem;
+            margin-top: 2rem;
             padding: 0.75rem 1.5rem;
             background-color: #0d6efd;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0b5ed7;
+        }
+
+        form {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input[type="email"] {
+            padding: 0.75rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        input[type="submit"] {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0b5ed7;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #d1e7dd;
+            color: #0f5132;
+            border: 1px solid #badbcc;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            background-color: #f1f3f4;
+            color: #666;
         }
     </style>
 </head>
 
 <body>
     <header>
+        <img src="logo.png" alt="TVSLC Logo">
         <h1>CloudSkillWorks</h1>
         <p>Build Cloud Confidence. Master AWS.</p>
     </header>
@@ -60,21 +145,34 @@
         <h2>What We Do</h2>
         <p>
             CloudSkillWorks helps individuals and teams master AWS through project-based learning,
-            1-on-1 training, and real-world deployment scenarios. Whether you're just starting
-            out or preparing for certification, we offer hands-on, practical education.
+            hands-on labs, and personalized instruction. Whether you're new to cloud computing
+            or working toward certification, our training solutions are built to get you there.
         </p>
 
-        <h3>Coming Soon</h3>
+        <h3>Launching Soon</h3>
         <p>
-            We're launching a training platform that features AWS labs, guided projects, and expert mentorship.
+            We're building a next-gen training platform with interactive AWS labs, guided projects,
+            and expert mentorship — tailored for real-world cloud engineering workflows.
         </p>
 
-        <a href="mailto:you@yourdomain.com" class="button">Get in Touch</a>
+        <h3>Stay Updated</h3>
+        <form id="signup-form">
+            <input type="email" name="email" placeholder="Enter your email" required />
+            <input type="submit" value="Sign Up for Updates" />
+        </form>
+        <div class="success-message" id="success-message">Thanks for signing up! We'll be in touch soon.</div>
     </main>
 
     <footer>
         &copy; 2025 CloudSkillWorks. All rights reserved.
     </footer>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('success-message').style.display = 'block';
+        });
+    </script>
 </body>
 
 </html>
