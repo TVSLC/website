@@ -4,9 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TVSLC - The Visual Software Learning Center</title>
     <link rel="icon" href="icon.png" type="image/png">
-    <title>The Visual Software Learning Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
@@ -16,8 +31,6 @@
             <div class="flex items-center space-x-4">
                 <img src="logo.png" alt="TVSLC Logo" class="h-10 w-auto">
             </div>
-            <a href="mailto:visualsoftwarelearningcenter@gmail.com"
-                class="text-blue-600 hover:text-blue-800 font-medium">Contact</a>
         </div>
     </header>
 
@@ -29,12 +42,24 @@
             Our platform combines mock interview rubrics, resume optimization, and tailored prep to improve the chances
             of success.
         </p>
-        <a href="mailto:visualsoftwarelearningcenter@gmail.com"
-            class="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition">Join
-            Our Beta</a>
+
+        <div class="max-w-xl mx-auto bg-white p-6 rounded shadow">
+            <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+            <form action="mailto:daniel.chen@tvslc.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required
+                    class="w-full mb-3 px-3 py-2 border rounded" />
+                <input type="email" name="email" placeholder="Your Email" required
+                    class="w-full mb-3 px-3 py-2 border rounded" />
+                <textarea name="message" placeholder="Your Message" required
+                    class="w-full mb-3 px-3 py-2 border rounded h-32"></textarea>
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Send
+                    Message</button>
+            </form>
+        </div>
     </main>
 
-    <footer class="mt-20 py-6 border-t text-center text-sm text-gray-500">
+    <footer class="mt-10 py-6 border-t text-center text-sm text-gray-500">
         &copy; 2025 TVSLC. All rights reserved.
     </footer>
 
